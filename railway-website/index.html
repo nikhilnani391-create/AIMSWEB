@@ -2,12 +2,268 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laxven Systems | B2B Industrial & Railway Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body class="font-sans antialiased text-gray-900 bg-white">
+    <div id="root">
+      <header class="bg-gray-900 text-white shadow-md w-full z-50 sticky top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <!-- Logo Placeholder -->
+          <div class="text-2xl font-bold tracking-tight">
+            <span class="text-blue-500">LAXVEN</span> SYSTEMS
+          </div>
+
+          <!-- Navigation - Hub and Spoke Links -->
+          <nav class="hidden md:flex space-x-8">
+            <a href="#" class="hover:text-blue-400 transition">Solutions</a>
+            <a href="#" class="hover:text-blue-400 transition">Products</a>
+            <a href="#" class="hover:text-blue-400 transition">Innovations</a>
+            <a href="#" class="hover:text-blue-400 transition">Company</a>
+            <a href="#" class="hover:text-blue-400 transition">Resources</a>
+          </nav>
+
+          <!-- High-Intent CTA -->
+          <div>
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition">
+              Request Technical Consultation
+            </a>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="relative bg-gray-800 text-white py-32 overflow-hidden">
+          <!-- Background Image Placeholder -->
+          <div class="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1541480601022-2308c0f01587?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+              alt="Railway track"
+              class="w-full h-full object-cover opacity-30"
+            />
+          </div>
+
+          <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+              <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                Precision Data Recording & Process Visualization for Mission-Critical Systems.
+              </h1>
+              <p class="text-xl md:text-2xl mb-10 text-gray-300">
+                Advanced 'Third Eye' innovations engineered for the railway and industrial sectors. Certified reliability when performance matters most.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded text-center transition">
+                  Explore Industry Solutions
+                </a>
+                <a href="#" class="bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white font-semibold py-3 px-8 rounded text-center transition">
+                  Download Product Catalog
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bg-gray-100 border-b border-gray-200 py-6">
+          <div class="container mx-auto px-6">
+            <p class="text-center text-sm text-gray-500 font-semibold uppercase tracking-wider mb-4">
+              Certified & Trusted by Global Leaders
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale">
+              <!-- Placeholders for logos/certifications -->
+              <div class="text-xl font-bold text-gray-800">ISO 9001:2015</div>
+              <div class="text-xl font-bold text-gray-800">EN 50155 Compliant</div>
+              <div class="text-xl font-bold text-gray-800">CE Certified</div>
+              <div class="text-xl font-bold text-gray-800">Partner Logo 1</div>
+              <div class="text-xl font-bold text-gray-800">Partner Logo 2</div>
+            </div>
+          </div>
+        </div>
+        <section class="py-20 bg-white">
+          <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Explore Our Industry Hubs</h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+              <!-- Railway Technology Hub -->
+              <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gray-300">
+                   <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Railway Technology" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-8">
+                  <h3 class="text-2xl font-bold text-gray-900 mb-4">Railway Technology</h3>
+                  <p class="text-gray-600 mb-6">
+                    Robust data recording and signaling solutions designed for electric and diesel locomotives, ensuring safety and compliance on every journey.
+                  </p>
+                  <ul class="mb-8 space-y-2 text-gray-700">
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      Electric Locomotives
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      Diesel Locomotives
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      Signal & Telecommunications
+                    </li>
+                  </ul>
+                  <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition flex items-center">
+                    Explore Railway Solutions <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Industrial Automation Hub -->
+              <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gray-300">
+                   <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Automation" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-8">
+                  <h3 class="text-2xl font-bold text-gray-900 mb-4">Industrial Automation</h3>
+                  <p class="text-gray-600 mb-6">
+                    Advanced data logging and process visualization systems to optimize manufacturing efficiency and monitor critical infrastructure.
+                  </p>
+                  <ul class="mb-8 space-y-2 text-gray-700">
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      Data Recording Systems
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      Process Visualization
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                      Custom Integration
+                    </li>
+                  </ul>
+                  <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition flex items-center">
+                    Explore Industrial Solutions <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <section class="py-20 bg-gray-50 border-t border-gray-200">
+          <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+              <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Systems</h2>
+                <p class="text-gray-600">Next-generation hardware for critical environments.</p>
+              </div>
+              <a href="#" class="hidden sm:inline-block text-blue-600 font-semibold hover:text-blue-800 transition">View Full Catalog &rarr;</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+              <!-- Product Card 1 -->
+              <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+                <div class="h-40 bg-gray-100 flex items-center justify-center mb-6 rounded">
+                  <span class="text-gray-400">Image Placeholder</span>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                   <h3 class="text-xl font-bold text-gray-900">LX-9000 Data Logger</h3>
+                   <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-semibold">EN 50155</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">Multi-channel solid-state recording system optimized for high-vibration locomotive environments.</p>
+                <div class="flex gap-2">
+                  <a href="#" class="text-sm border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded transition flex-1 text-center">Datasheet</a>
+                  <a href="#" class="text-sm bg-gray-900 hover:bg-gray-800 text-white py-2 px-4 rounded transition flex-1 text-center">Details</a>
+                </div>
+              </div>
+
+              <!-- Product Card 2 -->
+              <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+                <div class="h-40 bg-gray-100 flex items-center justify-center mb-6 rounded">
+                  <span class="text-gray-400">Image Placeholder</span>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                   <h3 class="text-xl font-bold text-gray-900">VisuPro HMI Panel</h3>
+                   <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-semibold">IP67</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">Ruggedized touch-screen interface for real-time process visualization in industrial settings.</p>
+                <div class="flex gap-2">
+                  <a href="#" class="text-sm border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded transition flex-1 text-center">Datasheet</a>
+                  <a href="#" class="text-sm bg-gray-900 hover:bg-gray-800 text-white py-2 px-4 rounded transition flex-1 text-center">Details</a>
+                </div>
+              </div>
+
+              <!-- Product Card 3 -->
+              <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+                <div class="h-40 bg-gray-100 flex items-center justify-center mb-6 rounded">
+                  <span class="text-gray-400">Image Placeholder</span>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                   <h3 class="text-xl font-bold text-gray-900">SignalSafe Gateway</h3>
+                   <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded font-semibold">SIL 3</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">Secure telecommunications gateway for remote signaling and diagnostic telemetry.</p>
+                <div class="flex gap-2">
+                  <a href="#" class="text-sm border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded transition flex-1 text-center">Datasheet</a>
+                  <a href="#" class="text-sm bg-gray-900 hover:bg-gray-800 text-white py-2 px-4 rounded transition flex-1 text-center">Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 text-center sm:hidden">
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">View Full Catalog &rarr;</a>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 bg-gray-900 text-white">
+          <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 class="text-3xl font-bold mb-4">Proof of Performance</h2>
+                <p class="text-xl text-gray-400 mb-8">
+                  See how our "Third Eye" innovations reduce downtime and ensure safety across national railway networks.
+                </p>
+
+                <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
+                  <h3 class="text-2xl font-bold mb-2">National Rail Fleet Upgrade</h3>
+                  <p class="text-gray-400 mb-6">
+                    Deployment of LX-9000 loggers across 400+ diesel locomotives to monitor engine telemetry and braking events in real-time.
+                  </p>
+
+                  <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div>
+                      <div class="text-4xl font-bold text-blue-500 mb-1">32%</div>
+                      <div class="text-sm text-gray-400 uppercase tracking-wide">Reduction in Unplanned Maintenance</div>
+                    </div>
+                    <div>
+                      <div class="text-4xl font-bold text-blue-500 mb-1">99.9%</div>
+                      <div class="text-sm text-gray-400 uppercase tracking-wide">Data Capture Reliability</div>
+                    </div>
+                  </div>
+
+                  <a href="#" class="inline-flex items-center text-white font-semibold hover:text-blue-400 transition">
+                    Read Full Case Study
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="relative h-96 rounded-lg overflow-hidden hidden md:block">
+                <img src="https://images.unsplash.com/photo-1512402138137-b2ebbb4df0de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Engineer inspecting train" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-blue-900 opacity-20"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
+        <p>&copy; 2024 Laxven Systems. All rights reserved. | ISO 9001:2015 Certified</p>
+      </footer>
+    </div>
   </body>
 </html>
