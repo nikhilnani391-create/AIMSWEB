@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Space Shooter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #gameCanvas {
+            border: 2px solid #0ff;
+            box-shadow: 0 0 20px #0ff, inset 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        #ui-overlay {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #0ff;
+            text-align: center;
+            pointer-events: none;
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        #score-display {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        #lives-display {
+            font-size: 18px;
+        }
+
+        #power-up-display {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff0;
+            font-size: 16px;
+            pointer-events: none;
+            text-shadow: 0 0 10px #ff0;
+        }
+
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f00;
+            font-size: 48px;
+            text-shadow: 0 0 20px #f00;
+            display: none;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        #game-over .restart-text {
+            font-size: 20px;
+            color: #0ff;
+            margin-top: 20px;
+            text-shadow: 0 0 10px #0ff;
+        }
+
+        #start-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0ff;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        #start-screen h1 {
+            font-size: 48px;
+            text-shadow: 0 0 30px #0ff;
+            margin-bottom: 20px;
+        }
+
+        #start-screen .controls {
+            font-size: 16px;
+            line-height: 2;
+            color: #aaf;
+        }
+
+        #start-screen .start-text {
+            font-size: 24px;
+            margin-top: 30px;
+            color: #ff0;
+            text-shadow: 0 0 15px #ff0;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        #level-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0f0;
+            font-size: 36px;
+            text-shadow: 0 0 20px #0f0;
+            display: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div id="ui-overlay">
+        <div id="score-display">SCORE: 0</div>
+        <div id="lives-display"></div>
+    </div>
+
+    <div id="power-up-display"></div>
+
+    <div id="game-over">
+        GAME OVER
+        <div class="restart-text">Press ENTER to restart</div>
+    </div>
+
+    <div id="start-screen">
+        <h1>3D SPACE SHOOTER</h1>
+        <div class="controls">
+            WASD or Arrow Keys - Move<br>
+            SPACE - Fire<br>
+            SHIFT - Boost Speed<br>
+        </div>
+        <div class="start-text">Press ENTER to start</div>
+    </div>
+
+    <div id="level-display"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>
