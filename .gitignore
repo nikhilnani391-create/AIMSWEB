@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+dist/
+.env
+
+# Go
+vendor/
+*.exe
+*.exe~
+
+# Unity
+game-client-server/Library/
+game-client-server/Temp/
+game-client-server/Obj/
+game-client-server/Build/
+game-client-server/Builds/
+game-client-server/Logs/
+game-client-server/UserSettings/
+game-client-server/MemoryCaptures/
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# IDE
+.idea/
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+*.log
+*.bak

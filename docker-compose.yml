@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: freefire-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: freefire-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gateway-auth:
+    build:
+      context: ./backend-services/gateway-auth
+      dockerfile: Dockerfile
+    container_name: freefire-gateway-auth
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/freefire
+      - JWT_SECRET=${JWT_SECRET:-free_fire_ultra_secret_key}
+      - NODE_ENV=production
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: unless-stopped
+
+  matchmaker:
+    build:
+      context: ./backend-services/matchmaker
+      dockerfile: Dockerfile
+    container_name: freefire-matchmaker
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - REDIS_ADDR=redis:6379
+      - REDIS_PASSWORD=
+      - ORCHESTRATOR_URL=http://orchestrator:5000
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  orchestrator:
+    build:
+      context: ./backend-services/orchestrator
+      dockerfile: Dockerfile
+    container_name: freefire-orchestrator
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - GAME_SERVER_IMAGE=freefire-game-server:latest
+      - HOST_IP=0.0.0.0
+      - BASE_GAME_PORT=7777
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
+  redis_data:

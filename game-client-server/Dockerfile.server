@@ -1,0 +1,33 @@
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y \
+    libglib2.0-0 \
+    libpulse0 \
+    libasound2 \
+    libx11-6 \
+    libxcursor1 \
+    libxrandr2 \
+    libxi6 \
+    libgl1-mesa-glx \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /game
+
+# Copy the headless Unity server build
+# Build the server with: Unity -> Build Settings -> Target Platform: Linux
+#   -> Server Build: checked -> Build
+COPY build/server/ ./
+
+RUN chmod +x ./GameServer
+
+ENV MATCH_ID=""
+ENV PLAYER_COUNT="50"
+ENV TICK_RATE="30"
+ENV PORT="7777"
+
+EXPOSE ${PORT}/udp
+
+USER nobody
+
+ENTRYPOINT ["./GameServer", "-batchmode", "-nographics", "-logFile", "/dev/stdout"]
